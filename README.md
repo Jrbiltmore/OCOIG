@@ -25,7 +25,7 @@ The Inspector General Office application is designed to manage and oversee grant
 1. Clone the repository:
 
    \`\`\`bash
-   git clone https://github.com/your-repo/OCOIG.git
+   git clone https://github.com/jrbiltmore/OCOIG.git
    \`\`\`
 
 2. Navigate to the project directory:

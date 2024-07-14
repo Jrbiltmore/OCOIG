@@ -1,0 +1,109 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+header {
+    background: #00274d; /* Dark Blue Color */
+    color: #ffffff; /* White Text */
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #007BFF 3px solid; /* Primary Blue Border */
+}
+header a {
+    color: #ffffff; /* White Text */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+header ul {
+    padding: 0;
+    list-style: none;
+}
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+header #branding {
+    float: left;
+}
+header #branding h1 {
+    margin: 0;
+}
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+header .highlight, header .current a {
+    color: #007BFF; /* Primary Blue */
+    font-weight: bold;
+}
+.section {
+    padding: 20px;
+    background: #ffffff; /* White Background */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.section h2 {
+    color: #00274d; /* Dark Blue Color */
+}
+.section ul {
+    list-style-type: none;
+    padding: 0;
+}
+.section ul li {
+    background-color: #0056b3; /* Secondary Blue Color */
+    border-left: 5px solid #00274d; /* Dark Blue Color */
+    color: #ffffff; /* White Text */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+.section ul ul {
+    padding-left: 20px;
+}
+.section ul ul li {
+    color: #000000; /* Black Text for file names */
+}
+.footer {
+    background: #00274d;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+.btn {
+    display: inline-block;
+    font-size: 1.1em;
+    margin: 10px 0;
+    padding: 10px 20px;
+    color: #ffffff;
+    background: #0056b3;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.btn-primary {
+    background: #007BFF;
+}
+.btn-secondary {
+    background: #6c757d;
+}

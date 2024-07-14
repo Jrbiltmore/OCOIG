@@ -12,6 +12,14 @@ The Inspector General Office application is designed to manage and oversee grant
 - Role-based access control
 - Data visualization with Recharts
 - CSRF protection
+- HMIS data integration for California, Orange County, San Diego, and LA counties
+- Self-registration for emergency beds, transitional beds, permanent housing vouchers, and lease retention
+- Dart app for police to order transportation to available beds
+- Iris authentication
+- AI fraud detection
+- Thorough interviews of tenants
+- Auditing of housing authorities
+- Detailed tracking of federal funding
 - Dockerized for easy deployment
 
 ## Prerequisites
@@ -60,6 +68,7 @@ The Inspector General Office application is designed to manage and oversee grant
 
 - \`client\`: React client application
 - \`server\`: Node.js and Express server application
+- \`data\`: Contains HMIS data for California, Orange County, San Diego, and LA counties
 - \`docker-compose.yml\`: Docker Compose configuration
 - \`Dockerfile\`: Dockerfile for the client
 

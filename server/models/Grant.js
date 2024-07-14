@@ -1,20 +1,37 @@
 
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const grantSchema = new mongoose.Schema({
-    title: { type: String, required: true },
-    description: { type: String, required: true },
-    amount: { type: Number, required: true },
-    status: { type: String, enum: ['pending', 'approved', 'rejected'], default: 'pending' },
-    dueDate: { type: Date, required: true },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now },
-    assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+const GrantSchema = new Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  amount: {
+    type: Number,
+    required: true,
+  },
+  status: {
+    type: String,
+    required: true,
+    enum: ['pending', 'approved', 'rejected'],
+    default: 'pending',
+  },
+  dueDate: {
+    type: Date,
+    required: true,
+  },
+  createdDate: {
+    type: Date,
+    default: Date.now,
+  },
+  updatedDate: {
+    type: Date,
+  },
 });
 
-grantSchema.pre('save', function(next) {
-    this.updatedAt = Date.now();
-    next();
-});
-
-module.exports = mongoose.model('Grant', grantSchema);
+module.exports = mongoose.model('Grant', GrantSchema);

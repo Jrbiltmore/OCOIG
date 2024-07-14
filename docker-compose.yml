@@ -1,13 +1,30 @@
 
-version: '3.8'
+version: '3'
 services:
-  web:
-    build: .
+  client:
+    build: ./client
     ports:
-      - "3000:3000"
+      - '3000:3000'
+    volumes:
+      - ./client/src:/app/src
+    environment:
+      - NODE_ENV=development
+  server:
+    build: ./server
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./server:/app
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongo:27017/ig_office
     depends_on:
-      - db
-  db:
-    image: mongo
+      - mongo
+  mongo:
+    image: mongo:4.4
     ports:
-      - "27017:27017"
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:

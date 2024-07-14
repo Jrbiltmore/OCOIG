@@ -1,23 +1,22 @@
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getGrants } from '../redux/actions/grantActions';
+import GrantList from '../components/GrantList';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const Grants = () => {
-  const [grants, setGrants] = useState([]);
+  const dispatch = useDispatch();
+  const grants = useSelector((state) => state.grants.grants);
 
   useEffect(() => {
-    const fetchGrants = async () => {
-      const response = await axios.get('/api/grants');
-      setGrants(response.data);
-    };
-    fetchGrants();
-  }, []);
+    dispatch(getGrants());
+  }, [dispatch]);
 
   const data = grants.map(grant => ({
     name: grant.title,
     amount: grant.amount,
-    status: grant.status
+    status: grant.status,
   }));
 
   return (
@@ -39,13 +38,7 @@ const Grants = () => {
         <Bar dataKey="amount" fill="#8884d8" />
         <Bar dataKey="status" fill="#82ca9d" />
       </BarChart>
-      <ul>
-        {grants.map(grant => (
-          <li key={grant._id}>
-            {grant.title} - {grant.status} - ${grant.amount}
-          </li>
-        ))}
-      </ul>
+      <GrantList grants={grants} />
     </div>
   );
 };
